@@ -23,6 +23,7 @@ public class TodoData {
         addItem(new TodoItem("first", "first details", LocalDate.now()));
         addItem(new TodoItem("second", "second details", LocalDate.now()));
         addItem(new TodoItem("third", "third details", LocalDate.now()));
+        addItem(new TodoItem("fourth", "fourth details", LocalDate.now()));
     }
 
     // public methods
@@ -48,7 +49,7 @@ public class TodoData {
         }
     }
 
-    public TodoItem getIten(int id) {
+    public TodoItem getItem(int id) {
         for (TodoItem item : items) {
             if (item.getId() == id) {
                 return item;
@@ -57,7 +58,7 @@ public class TodoData {
         return null;
     }
 
-    public void updateIten(@NonNull TodoItem toUpdate) {
+    public void updateItem(@NonNull TodoItem toUpdate) {
         ListIterator<TodoItem> itemIterator = items.listIterator();
 
         while (itemIterator.hasNext()) {

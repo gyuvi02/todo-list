@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class DemoServiceImpl implements DemoService {
 
+    // publlic methods
     @Override
     public String getHelloMessage(String user, int age) {
         return "Hello, " + user + " I know, that you are " + age + " years old";

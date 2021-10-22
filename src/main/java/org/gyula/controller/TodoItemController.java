@@ -76,7 +76,6 @@ public class TodoItemController {
         log.info("Viewing item: " + todoItemService.getItem(id).getTitle());
         TodoItem todoItem = todoItemService.getItem(id);
         model.addAttribute(AttributeNames.TODO_ITEM, todoItem);
-//        System.out.println(model.toString());
         return ViewNames.VIEW;
     }
 }

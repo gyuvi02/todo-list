@@ -70,4 +70,13 @@ public class TodoItemController {
         todoItemService.removeItem(id);
         return "redirect:/" + Mappings.ITEMS;
     }
+
+    @GetMapping(Mappings.VIEW_ITEM)
+    public String viewItem(@RequestParam int id, Model model) {
+        log.info("Viewing item: " + todoItemService.getItem(id).getTitle());
+        TodoItem todoItem = todoItemService.getItem(id);
+        model.addAttribute(AttributeNames.TODO_ITEM, todoItem);
+//        System.out.println(model.toString());
+        return ViewNames.VIEW;
+    }
 }

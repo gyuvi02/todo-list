@@ -1,6 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="org.gyula.util.Mappings" %>
 
+<html>
 <!DOCTYPE html>
 <%--<html lang="en">--%>
 <head>
@@ -20,6 +21,7 @@
                 <th>Deadline</th>
                 <th>Edit</th>
                 <th>Delete</th>
+                <th>View</th>
             </tr>
 
             <c:forEach var="item" items="${todoData.items}">
@@ -32,11 +34,16 @@
                     <c:param name="id" value="${item.id}"/>
                 </c:url>
 
+                <c:url var="vieweUrl" value="${Mappings.VIEW_ITEM}">
+                    <c:param name="id" value="${item.id}"/>
+                </c:url>
+
                 <tr>
                     <td><c:out value="${item.title}"/></td>
                     <td><c:out value="${item.deadline}"/></td>
                     <td><a href="${editUrl}">Edit</a></td>
                     <td><a href="${deleteUrl}">Delete</a></td>
+                    <td><a href="${vieweUrl}">View</a></td>
                 </tr>
             </c:forEach>
         </table>
